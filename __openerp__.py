@@ -12,7 +12,6 @@ Buttons can be hidden or their labels can be set
   * Creates a record in message_box.
   * Processes reply in call to your model's process_reply().
   * Example of code in your wizard (or model):
-    ....
     ctx.update({"active_model": self._name,
     .           "active_id": wiz.id,
     .           "active_ids": [wiz.id],
@@ -23,8 +22,6 @@ Buttons can be hidden or their labels can be set
     .           # special value 'invisible' will hide a button
     return self.pool.get("message.box").ask_question(
     .   cr, uid, {"question": "Do you really need an answer?",}, context=ctx)
-    ....
-
     def process_reply(self, cr, uid, ids, reply, context=None):
     .   ....
     .   return {
