@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+                <!--  Wizard -->
+        <record id="view_message_box" model="ir.ui.view">
+            <field name="name">Message box</field>
+            <field name="model">message.box</field>
+            <field name="arch" type="xml">
+                <form string="Please answer question" version="7.0">
+                    <group>
+                        <div class="oe_title">
+                            <h3><field name="question" readonly="1" nolabel="1" /></h3>
+                        </div>
+                    </group>
+                    <group invisible="1" >
+                        <field name="reply0_label" />
+                        <field name="reply1_label" />
+                        <field name="reply2_label" />
+                        <field name="reply3_label" />
+                        <field name="reply4_label" />
+                    </group>
+                    <footer>
+                        <button name="reply0" type="object"
+                            string="Cancel" class="oe_highlight"
+                            attrs="{'invisible':
+                                    [('reply0_label', '=', 'invisible'),],
+                                    }" />
+                        <button name="reply1" type="object"
+                            string="Proceed" 
+                            attrs="{'invisible':
+                                    [('reply1_label', '=', 'invisible'),],
+                                    }" />
+                        <button name="reply2" type="object"
+                            string="reply2" 
+                            attrs="{'invisible':
+                                    [('reply2_label', '=', 'invisible'),],
+                                    }" />
+                        <button name="reply3" type="object"
+                            string="reply3" 
+                            attrs="{'invisible':
+                                    [('reply3_label', '=', 'invisible'),],
+                                    }" />
+                        <button name="reply4" type="object"
+                            string="reply4" 
+                            attrs="{'invisible':
+                                    [('reply4_label', '=', 'invisible'),],
+                                    }" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
